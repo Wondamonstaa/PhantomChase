@@ -22,24 +22,6 @@ object Main {
 
   def main(args: Array[String]): Unit = {
 
-    /*val config = ConfigFactory.load()
-    val logger = org.slf4j.LoggerFactory.getLogger("Main")
-    val hostName = InetAddress.getLocalHost.getHostName
-    val ipAddr = InetAddress.getLocalHost.getHostAddress
-    logger.info(s"Hostname: $hostName")
-    logger.info(s"IP Address: $ipAddr")
-
-      // Create SparkSession object
-      val spark = SparkSession.builder()
-        .master("local[1]")
-        .appName("SparkByExamples.com")
-        .getOrCreate();
-
-      // Access spark context
-      println("Spark App Name : " + spark.sparkContext.appName)
-
-      val sc = spark.sparkContext*/
-
     val CONFIGENTRYNAME: String = "NGSimulator"
     val config: Config = ConfigFactory.load()
     val globalConfig: Config = obtainConfigModule(config, CONFIGENTRYNAME)
