@@ -74,7 +74,8 @@ DataConverter object is responsible for converting the graphs into a human-frien
 
 ____________________
 
-<img width="1256" alt="Screenshot 2023-10-10 at 10 16 48 AM" src="https://github.com/Wondamonstaa/NetGameSim_Project1/assets/113752537/6b87b301-acce-4afb-b176-e0ed531b2b27">
+<img width="1320" alt="Screenshot 2023-11-02 at 11 37 58 PM" src="https://github.com/Wondamonstaa/NetRandomWalker/assets/113752537/e88539db-1024-4f8f-bea1-b1868d892a51">
+
 
 
 ____________________
@@ -84,11 +85,6 @@ ____________________
 
 Located under DataManipulation folder, the following helper object was introduced to ease the load on DataConverter object as well as to simplify the method of extracting the data from the graph nodes and edges for further shuffling and subsequent usage of the obtained information. The following object contains 3 methods: 1) Using the exec() method, the Mixer object loads the graphs, accesses their nodes and edges, and invokes the other two object methods; 2) Next, combineAndWriteToCSV() and writeNodesToCSV() methods shuffle the generated files using monadic operations to create thousands of possible combinations of original and perturbed counterparts containing the path walked by the RandomWalk algorithm to detect whether the attack of the Man in the Middle was succesful or not.
 
-# Sample output:
-
-____________________
-
-<img width="1256" alt="Screenshot 2023-10-10 at 10 16 48 AM" src="https://github.com/Wondamonstaa/NetGameSim_Project1/assets/113752537/6b87b301-acce-4afb-b176-e0ed531b2b27">
 
 
 ____________________
