@@ -1,4 +1,4 @@
-# CS 441 Project 1 Fall 2023
+# CS 441 Project 2 Fall 2023
 ## Kiryl Baravikou
 ### UIN: 656339218
 ### NetID: kbara5
