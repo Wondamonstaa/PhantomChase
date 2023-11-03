@@ -150,9 +150,9 @@ The following object serves its primary role as a helper and the basis for imple
 
 ## Test Cases
 
-The tests can be run using 'sbt clean test' command or by directly invoking the class SimRankTest, located under the following path: src/main/Test/SimRankTest.scala
+The tests can be run using 'sbt clean test' command or by directly invoking the class SimRankTest, located under the following path: src/main/Test/RandomWalkerTest.scala
 
-In essence, the battery of tests conducted evaluates the performance and functionality of the SimRank class, alongside the sharding function, assessing their proficiency in executing tasks accurately and effectively. These tests serve as a robust validation mechanism, ensuring that both components operate seamlessly and in accordance with their intended objectives.
+In essence, the battery of tests conducted evaluates the performance and functionality of the RandomWalker, specifically the functionality of the RandomWalk algorithm and its ability clearly and efficiently travel across the nodes and edges of the provided graph, and SimRank classes, alongside the sharding function, assessing their proficiency in executing tasks accurately and effectively. These tests serve as a robust validation mechanism, ensuring that both components operate seamlessly and in accordance with their intended objectives.
 
 
 ## Limitations:
