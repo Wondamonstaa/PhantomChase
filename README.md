@@ -110,7 +110,22 @@ ___________________
 
 5. SimRank:
 
-The following object, as mentioned earlier, is used to calculate the similarities between two graphs by analyzing the properties nodes and edges from both the original and perturbed graphs. Using the specified threshold and the reward system, the algorithm performs the comparison of the data stored in the nodes and edges of both graphs to determine the current similarity score between them which is used for the final decision based on which the one can tell whether or not are two compared objects are the same. Additionally, the following algorithm has been modified the way to keep track of the number of successful and unsuccessful attacks performed by the Man in the Middle while trying to steal the valuable data from the system. The calculations are done by keeping an eye on how many times the honepots, represented by the added nodes in the perturbed graphs about which the attacker does not know, have been accessed. If the honepot has been accessed in order to obtain the data stored there, the attacker will be immediately flagged by the system, and subsequent instructions will be sent to eliminate the threat. 
+The following object, as mentioned earlier, is used to calculate the similarities between two graphs by analyzing the properties nodes and edges from both the original and perturbed graphs. Using the specified threshold and the reward system, the algorithm performs the comparison of the data stored in the nodes and edges of both graphs to determine the current similarity score between them which is used for the final decision based on which the one can tell whether or not are two compared objects are the same. Additionally, the following algorithm has been modified the way to keep track of the number of successful and unsuccessful attacks performed by the Man in the Middle while trying to steal the valuable data from the system. The calculations are done by keeping an eye on how many times the honepots, represented by the added nodes in the perturbed graphs about which the attacker does not know, have been accessed. If the honepot has been accessed in order to obtain the data stored there, the attacker will be immediately flagged by the system, and subsequent instructions will be sent to eliminate the threat. Additionally, the following algorithm computes similarity and F-1 score, as well as the statistics about random walks, such as min/max/median/mean number of nodes in these walks and the ratio of the number of random walks resulting in successful attacks to the total number of random walks. Finally, as mentioned previously, the result of the computations will be stored in the 'part-00000' file with the statistics is produced for further analysis.
+
+
+___________________
+
+# Sample output:
+
+<img width="448" alt="Screenshot 2023-11-03 at 12 21 14 AM" src="https://github.com/Wondamonstaa/NetRandomWalker/assets/113752537/ef7f9dc4-0b4d-45bb-9c9d-b2c81b692683">
+
+
+
+
+
+
+___________________
+
 
 
 6. EdgesSimilarityMapReduce:
