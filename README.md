@@ -79,6 +79,20 @@ ____________________
 
 ____________________
 
+
+3. Mixer:
+
+Located under DataManipulation folder, the following helper object was introduced to ease the load on DataConverter object as well as to simplify the method of extracting the data from the graph nodes and edges for further shuffling and subsequent usage of the obtained information. The following object contains 3 methods: 1) Using the exec() method, the Mixer object loads the graphs, accesses their nodes and edges, and invokes the other two object methods; 2) Next, combineAndWriteToCSV() and writeNodesToCSV() methods shuffle the generated files using monadic operations to create thousands of possible combinations of original and perturbed counterparts containing the path walked by the RandomWalk algorithm to detect whether the attack of the Man in the Middle was succesful or not.
+
+# Sample output:
+
+____________________
+
+<img width="1256" alt="Screenshot 2023-10-10 at 10 16 48 AM" src="https://github.com/Wondamonstaa/NetGameSim_Project1/assets/113752537/6b87b301-acce-4afb-b176-e0ed531b2b27">
+
+
+____________________
+
 3. SimRankMapReduce: 
 
 The purpose of this object is to construct a Map/Reduce model, which operates exclusively on <key, value> pairs, that is, the framework views the input to the job as a set of <key, value> pairs and produces a set of <key, value> pairs as the output of the job, conceivably of different types. Inside the SimRankMapReduce object, an object of the SimRank class is created, which allows you to access methods for highlighting the similarities between two graphs and at the same time reducing the code pollution of the SimRankMapReduce object. Inside Mapper, the main method for the initial processing of received files is the map function. I use LongWritable and Text respectively as the input key and value since the CSV shard is read line by line. The output values for <key, value> pairs are Text and DoubleWritable. Inside map(), while reading a file line by line, its similarity rank is calculated via invoking calculateSimRank() function by passing each line of the processed CSV file as an argument. Thus, each line of the file is processed, followed by registration of NodeID and its similarity score for further processing. The program transfers these values to Reduce, where the final processing of the received data takes place. 
