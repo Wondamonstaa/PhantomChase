@@ -9,7 +9,6 @@ import org.apache.spark._
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.SparkSession
 import org.slf4j.Logger
-
 import java.net.InetAddress
 import scala.annotation.tailrec
 import scala.collection.JavaConverters._
