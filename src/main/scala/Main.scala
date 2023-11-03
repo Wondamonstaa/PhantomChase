@@ -1,3 +1,4 @@
+import DataManipulation.ArgumentParser
 import Utilz.NGSConstants.obtainConfigModule
 import com.lsc.Main.logger
 import com.typesafe.config.{Config, ConfigFactory}
@@ -12,6 +13,7 @@ object Main {
     val edges: EdgeRDD[ED]
   }
 
+  //Abstraction for vertex property
   class VertexProperty()
   case class UserProperty(val name: String) extends VertexProperty
   case class ProductProperty(val name: String, val price: Double) extends VertexProperty
@@ -22,6 +24,7 @@ object Main {
 
   def main(args: Array[String]): Unit = {
 
+    //Loading the configurations from the application.conf file
     val CONFIGENTRYNAME: String = "NGSimulator"
     val config: Config = ConfigFactory.load()
     val globalConfig: Config = obtainConfigModule(config, CONFIGENTRYNAME)
@@ -37,7 +40,7 @@ object Main {
     val iterations = globalConfig.getString("iterations")
     val loadedOriginalNodes = globalConfig.getString("loadedOriginalNodes")
 
-    //The following array contains the arguments that are passed to the ArgumentParser class
+    //The following array contains the arguments that are passed to the DataManipulation.ArgumentParser class => DONE
     val argsArray = Array(
       originalGraphFileName,
       originalGraphPath,
@@ -51,11 +54,11 @@ object Main {
       loadedOriginalNodes
     )
 
-    //An object of ArgumentParser class is created => the "entry" point of the written code
+    //An object of DataManipulation.ArgumentParser class is created => the "entry" point of the written code => DONE
     val argumentParser = new ArgumentParser()
     val parsedArguments = argumentParser.parse(argsArray)
 
-    //Check if the args are valid
+    //Check if the args are valid => DONE
     parsedArguments match {
       case Some((originalGraphFileName, originalGraphPath,
       perturbedGraphFileName, perturbedGraphPath,

@@ -1,5 +1,5 @@
 import NetGraphAlgebraDefs.{NetGraph, NodeObject}
-import RandomWalker.RandomWalker
+import .RandomWalker
 import SimRankAlgorithm.SimRank
 import Utilz.NGSConstants.obtainConfigModule
 import com.typesafe.config.{Config, ConfigFactory}

@@ -1,10 +1,13 @@
+package DataManipulation
+
+import Walker.RandomWalker
 import Utilz.CreateLogger
 
 // The following class is used to parse the command-line arguments for the main function.
 class ArgumentParser {
 
   val logger = CreateLogger(classOf[ArgumentParser])
-  logger.info("ArgumentParser is ready to parse the arguments.")
+  logger.info("DataManipulation.ArgumentParser is ready to parse the arguments.")
 
   // Parse the command-line arguments and return them as an Option of a tuple.
   def parse(args: Array[String]): Option[(String, String, String, String, String, String, String, String, Int, String)] = {

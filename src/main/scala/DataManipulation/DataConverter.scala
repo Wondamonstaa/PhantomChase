@@ -1,3 +1,5 @@
+package DataManipulation
+
 import NetGraphAlgebraDefs.{NetGraph, NodeObject}
 import Utilz.CreateLogger
 import com.google.common.graph.EndpointPair
@@ -5,35 +7,9 @@ import org.slf4j.Logger
 
 import java.io.{BufferedWriter, File, FileWriter, PrintWriter}
 import java.nio.file.{Files, StandardCopyOption}
-import scala.collection.mutable.ListBuffer
-import scala.io.Source
-
-import NetGraphAlgebraDefs.GraphPerturbationAlgebra.ModificationRecord
-import NetGraphAlgebraDefs.NetModelAlgebra.{actionType, outputDirectory}
-import NetGraphAlgebraDefs.{Action, GraphPerturbationAlgebra, NetGraph, NetModelAlgebra, NodeObject}
-import NetModelAnalyzer.Analyzer
-import Randomizer.SupplierOfRandomness
-import Utilz.{CreateLogger, NGSConstants}
-import com.google.common.graph.{EndpointPair, ValueGraph}
-
-import java.util.concurrent.{ThreadLocalRandom, TimeUnit}
-import scala.concurrent.duration._
-import scala.concurrent.{Await, ExecutionContext, Future}
-import com.typesafe.config.ConfigFactory
-import guru.nidi.graphviz.engine.Format
-import org.slf4j.Logger
-
-import java.net.{InetAddress, NetworkInterface, Socket}
-import scala.collection.parallel.ParSeq
-import scala.util.{Failure, Random, Success}
-import NetGraphAlgebraDefs.NetGraph._
-
 import scala.collection.JavaConverters._
-import java.io.{BufferedWriter, File, FileWriter, PrintWriter}
-import java.nio.file.{Files, Paths, StandardCopyOption}
 import scala.collection.mutable.ListBuffer
 import scala.io.Source
-import java.io.{BufferedWriter, FileWriter}
 
 object DataConverter {
 

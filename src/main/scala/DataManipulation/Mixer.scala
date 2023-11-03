@@ -1,5 +1,8 @@
-import NetGraphAlgebraDefs.{NetGraph, NodeObject}
+package DataManipulation
+
 import NetGraphAlgebraDefs.NetGraph.logger
+import NetGraphAlgebraDefs.{NetGraph, NodeObject}
+
 import java.io._
 import scala.collection.convert.ImplicitConversions.`collection AsScalaIterable`
 import scala.io.Source
