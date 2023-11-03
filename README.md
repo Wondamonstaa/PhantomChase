@@ -110,7 +110,7 @@ ___________________
 
 5. SimRank:
 
-The following object, as mentioned earlier, is used to calculate the similarities between two graphs by analyzing the properties nodes and edges from both graphs. Using the given threshold, a similarity score is calculated, which subsequently serves as the output value in the Map and the input value in the Reducer. Based on the similarity score, as stated above, traceability links between nodes and edges are calculated.
+The following object, as mentioned earlier, is used to calculate the similarities between two graphs by analyzing the properties nodes and edges from both the original and perturbed graphs. Using the specified threshold and the reward system, the algorithm performs the comparison of the data stored in the nodes and edges of both graphs to determine the current similarity score between them which is used for the final decision based on which the one can tell whether or not are two compared objects are the same. Additionally, the following algorithm has been modified the way to keep track of the number of successful and unsuccessful attacks performed by the Man in the Middle while trying to steal the valuable data from the system. The calculations are done by keeping an eye on how many times the honepots, represented by the added nodes in the perturbed graphs about which the attacker does not know, have been accessed. If the honepot has been accessed in order to obtain the data stored there, the attacker will be immediately flagged by the system, and subsequent instructions will be sent to eliminate the threat. 
 
 
 6. EdgesSimilarityMapReduce:
