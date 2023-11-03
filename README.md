@@ -7,7 +7,7 @@ Repo for the NetRandomWalker Project 2 for CS 441 Fall 2023
 
 ---
 
-AWS EMR Deployment YouTube link: EDIT
+AWS EC2 IaaS Deployment YouTube link: EDIT
 
 ---
 
@@ -41,7 +41,7 @@ Other Requirements:
 3) Logging used for all programs.
 4) Configurable input and output paths for the Apache Spark programs.
 5) Compileable through 'sbt clean compile run'
-7) Deployed on AWS EMR demonstrating all the steps of deployment.
+7) Deployed on AWS EC2 IaaS demonstrating all the steps of deployment.
 8) Video explanation of the deployment recorded.
 9) RandomWalk algorithm must be implemented.
 10) Sophisticated documentation with clarifications of the chosen design rationale.
@@ -160,12 +160,13 @@ In essence, the battery of tests conducted evaluates the performance and functio
 1) For local program execution, the user needs to have JDK version 1.8, Scala 2.13.10, sbt 1.9.6, and Apache Spark 3.5.0 installed.
 2) The program supports processing multiple files within the same input folder if the user chooses to split the files, but it cannot manage input files from different locations. 
 3) The user should possess the capability to provide Read/Write permissions to the "Users" group for the LogFileGenerator project folder. This typically requires Administrator-level access.
-4) The feature for altering the name and extension of the output file is effective only during local execution. In other words, it does not modify the name and extension in the case of program execution on AWS EMR, particularly in S3 Bucket.
+4) The feature for altering the name and extension of the output file is effective only during local execution. In other words, it does not modify the name and extension in the case of program execution on AWS EC2 IaaS, particularly in S3 Bucket.
 
 
 ## Note for Dr. Mark Grechanik and Utsav
 
 ___________
+
 
 The final part of this assignment requires us to compare the produced results with the results produced by Dr. Mark in the YAML file to estimate the goodness of our algorithm. Carrying out this comparison makes sense only if the algorithm is mostly free of gross errors, which minimizes the chance of obtaining an inaccurate result. In my case, the algorithm is imprecise and can sometimes be confusing when analyzing the generated data. When writing the algorithm, due to the lack of a clear understanding of how exactly to work with this kind of data, and due to lack of experience, I did not take into account a number of important factors that play a key role in determining the percentage of similarity between nodes and edges of both graphs. Taking into account all the above, I conclude that my algorithm is inaccurate and cannot be used at this stage for the purpose of accurately comparing the results obtained with the results of Dr. Mark. The implemented algorithm still needs careful refinement and additional improvements in order to increase the accuracy of calculations.
 
