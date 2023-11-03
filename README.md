@@ -39,10 +39,12 @@ Other Requirements:
 1) The output files should be in the format of .csv or any other human-readible format.
 2) 5 or more scalatests should be implemented.
 3) Logging used for all programs.
-4) Configurable input and output paths for the map/reduce programs.
+4) Configurable input and output paths for the Apache Spark programs.
 5) Compileable through 'sbt clean compile run'
 7) Deployed on AWS EMR demonstrating all the steps of deployment.
 8) Video explanation of the deployment recorded.
+9) RandomWalk algorithm must be implemented.
+10) Sophisticated documentation with clarifications of the chosen design rationale.
 
 ---
 
