@@ -147,6 +147,7 @@ object RandomWalker {
     }
 
     // Convert random path details to an RDD, coalesce it to a single partition, and save it to the specified path.
+    //Parallelize acts lazily. The input parameters are not evaluated until an action is called.
     val randomPathOutputRDD: RDD[String] = sparkContext.parallelize(randomPathDetails.toSeq)
     val coalescedRDD = randomPathOutputRDD.coalesce(1)
     coalescedRDD.saveAsTextFile(randomPathOutputPath)
@@ -193,7 +194,7 @@ object RandomWalker {
     val originalGraph: Option[NetGraph] = NetGraph.load(originalGraphFileName, originalGraphPath)
     val perturbedGraph: Option[NetGraph] = NetGraph.load(perturbedGraphFileName, perturbedGraphPath)
 
-    // Initialize the Spark session.
+    //The entry point to programming Spark with the Dataset and DataFrame API.
     val spark = SparkSession.builder()
       .master("local[*]")
       .appName("RandomWalker")
@@ -220,7 +221,7 @@ object RandomWalker {
     val successfulAttacks = randomWalk(netPerturbedGraph, adj, iterations, spark.sparkContext, randomPathOutputPath)
 
     // Create a combination of the original and perturbed graph => creates the combined CSV.
-    Mixer.exec(originalGraphFileName, originalGraphPath, randomPathOutputPath, randomFilePath, combinedFilePath, loadedOriginalNodes)
+    Mixer.exec(spark, originalGraphFileName, originalGraphPath, randomPathOutputPath, randomFilePath, combinedFilePath, loadedOriginalNodes)
 
     // After performing the random walk and creating the combined CSV file, read the combined file.
     val combinedData: RDD[String] = spark.sparkContext.textFile(combinedFilePath)

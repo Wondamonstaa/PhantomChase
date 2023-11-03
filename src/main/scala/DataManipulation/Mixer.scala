@@ -2,15 +2,22 @@ package DataManipulation
 
 import NetGraphAlgebraDefs.NetGraph.logger
 import NetGraphAlgebraDefs.{NetGraph, NodeObject}
-
+import Walker.RandomWalker
+import org.apache.spark.sql.{DataFrame, SparkSession}
+import org.apache.spark.sql.functions._
 import java.io._
 import scala.collection.convert.ImplicitConversions.`collection AsScalaIterable`
 import scala.io.Source
 
 object Mixer {
 
+  /**
+   * Write nodes to a CSV file.
+   *
+   * @param outputPath The file path to the output CSV file.
+   * @param nodes      A set of NodeObject representing the nodes to be written to the CSV.
+   */
   def writeNodesToCSV(outputPath: String, nodes: java.util.Set[NodeObject]): Unit = {
-
     val writer = new PrintWriter(outputPath)
     nodes.foreach { node =>
       val properties = node.toString.split("\\(")(1).split("\\)")(0)
@@ -20,9 +27,15 @@ object Mixer {
     writer.close()
   }
 
-  // Function to compare lines from perturbed file with lines from original file and write to CSV
-  def combineAndWriteToCSV(perturbedFilePath: String, originalFilePath: String, combinedFilePath: String): Unit = {
 
+  /**
+   * Combine and write lines from perturbed file with lines from original file to a CSV file.
+   *
+   * @param perturbedFilePath The file path to the perturbed data file.
+   * @param originalFilePath  The file path to the original data file.
+   * @param combinedFilePath  The file path to the output CSV file.
+   */
+  def combineAndWriteToCSV(perturbedFilePath: String, originalFilePath: String, combinedFilePath: String): Unit = {
     // Read the contents of the perturbed and original files
     val perturbedLines = Source.fromFile(perturbedFilePath).getLines().toList.drop(1) // Skip header
     val originalLines = Source.fromFile(originalFilePath).getLines().toList.drop(1) // Skip header
@@ -43,8 +56,33 @@ object Mixer {
     csvWriter.close()
   }
 
+  /**
+   * Combine and write lines from perturbed file with lines from original file to a CSV file using Spark.
+   *
+   * @param spark             The SparkSession to use for DataFrame operations.
+   * @param perturbedFilePath The file path to the perturbed data file.
+   * @param originalFilePath  The file path to the original data file.
+   * @param combinedFilePath  The file path to the output CSV file.
+   */
+  def combineAndWriteToCSV(spark: SparkSession, perturbedFilePath: String, originalFilePath: String, combinedFilePath: String): Unit = {
+    // Read the contents of the perturbed and original files as DataFrames
+    val perturbedDF: DataFrame = spark.read.text(perturbedFilePath)
+    val originalDF: DataFrame = spark.read.text(originalFilePath)
+
+    // Extract lines as strings
+    val perturbedLines = perturbedDF.select(col("value").as("perturbed"))
+    val originalLines = originalDF.select(col("value").as("original"))
+
+    // Cross join to create the Cartesian product
+    val combinedDF = originalLines.crossJoin(perturbedLines)
+
+    // Write the combined DataFrame to a CSV file
+    combinedDF.write.csv(combinedFilePath)
+  }
+
+
   //@main
-  def exec(originalGraphFileName: String, originalGraphPath: String, randomPathOutputPath: String, randomFilePath: String, combinedFilePath: String, loadedOriginalNodes: String): Unit = {
+  def exec(spark: SparkSession, originalGraphFileName: String, originalGraphPath: String, randomPathOutputPath: String, randomFilePath: String, combinedFilePath: String, loadedOriginalNodes: String): Unit = {
 
     // Here we load in the Original Ngs Graph
     logger.info("Loading in Original Graph ngs file using NetGraph.load function:")
@@ -72,8 +110,8 @@ object Mixer {
     // Original Nodes are were directly stored in .txt
     logger.info("Creating Csv File to store each Perturbed Node X Original Nodes in a CSV File")
     combineAndWriteToCSV(randomFilePath, loadedOriginalNodes, combinedFilePath)
+    //combineAndWriteToCSV(spark, randomFilePath, loadedOriginalNodes, combinedFilePath)
     logger.info("Combined Csv of Perturbed X Original Graphs was Successfully created")
-
   }
 
   def main(args: Array[String]): Unit = {}
