@@ -128,11 +128,9 @@ ___________________
 
 
 
-6. EdgesSimilarityMapReduce:
+6. EdgeRDDSuite:
 
-This component serves the purpose of establishing a Map/Reduce model that exclusively operates on pairs of data denoted as <key, value>. Inside the EdgesSimilarityMapReduce component, an instance of the SimRank class is created. This instantiation enables us to access methods for evaluating similarities between two graphs, specifically edges, all while reducing the code complexity within the EdgesSimilarityMapReduce object.
-
-In the Mapper phase, the primary method for the initial processing of input files is the map function. LongWritable and Text are used as the input key and value types, as we process the CSV file line by line. The output values for <key, value> pairs consist of Text and DoubleWritable. Within the map() function, while processing each line of the file, we calculate its similarity rank by invoking the calculateEdgeSimRank() function with each line of the processed CSV file as an argument. As a result, each line of the file undergoes processing, accompanied by the registration of NodeID and its corresponding similarity score for subsequent steps. These values are then transmitted to the Reduce phase, where the final processing of the received data unfolds. The driver of this class is the runEdgeSimMR(inputPathE: String, outputPathE: String) method, which takes the path to the directory with shards for edges, and the output path for the produced result as the second argument.
+Inside the EdgeRDDSuite object, the LocalSparkContext trait is used to manage a local SparkContext variable, primarily in the context of testing. It ensures that a new SparkContext is created, used within a specified function, and then correctly stopped after the function's execution. The following object is useful for running Spark-related tests and ensuring that the SparkContext doesn't leak or interfere with other tests. Besides that, the EdgeRDDSuite object contains the helper tripleWalk() method which helps to perform the RandomWalk algorithm on the input graph using parallelization and triplets in combination with monadic operations to maximize the efficiency and resource usage of the machine. The results are stored in the Resilient Distributes Datasets, collected, and, finally, stored in the specified output directory for further analysis.
 
 
 _______________
