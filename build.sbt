@@ -94,3 +94,13 @@ run / javaOptions ++= Seq(
 Compile / mainClass := Some("com.lsc.Main")
 run / mainClass := Some("com.lsc.Main")
 
+val jarName = "netrandomwalker.jar"
+/*assembly/assemblyJarName := jarName
+
+
+//Merging strategies
+ThisBuild / assemblyMergeStrategy := {
+  case PathList("META-INF", _*) => MergeStrategy.discard
+  case "reference.conf" => MergeStrategy.concat
+  case _ => MergeStrategy.first
+}*/

@@ -197,7 +197,7 @@ object RandomWalker {
     val spark = SparkSession.builder()
       .master("local[*]")
       .appName("RandomWalker")
-      .getOrCreate()
+      .getOrCreate() //Gets an existing session, if one exists
 
     // Check if the graphs have been loaded successfully.
     val netPerturbedGraph: NetGraph = perturbedGraph.getOrElse {
