@@ -3,7 +3,7 @@
 ### UIN: 656339218
 ### NetID: kbara5
 
-Repo for the NetGameSim Project 2 for CS 441 Fall 2023
+Repo for the NetRandomWalker Project 2 for CS 441 Fall 2023
 
 ---
 
@@ -12,14 +12,16 @@ AWS EMR Deployment YouTube link: EDIT
 ---
 
 ## How to Run the Project:
-1) Start by downloading the project repository from Git.
-2) Navigate to the NetGameSim directory: use your terminal or command prompt to navigate to the "NetGameSim" directory within the downloaded project folder.
-3) In your terminal, run the following command to clean, compile, and execute the project: `sbt clean compile run`. The following command successfully launched the Main class of the program which contains the essential methods for program execution of the written methods within other objects.
-4) To run tests and ensure the code's functionality, use the following command: `sbt clean test`. All the tests on my end ran successfully among with tests written by Dr. Mark.
-5) If you need to create a .jar file for your project, execute the following command: `sbt clean assembly`. The resulting jar will be placed in __NetGameSim/target/scala-3.2.2/netmodelsim.jar__
-6) If you prefer using IntelliJ for development: a) Import the project into IntelliJ IDE. b) Build the project. c) Create a "configuration" for the Main.scala file. d) Set the configuration's arguments to be the input and output folders, separated by a space. NB: to run the project properly, a user, i.e. you, should specify the input/output paths in the application.conf file.
-8) Ensure that your local input/output folder has the necessary permissions to allow the program to read from and write to it. You can check and adjust folder permissions by right-clicking on the project directory, selecting "Properties," and navigating to the "Security" tab. Make sure that the group "Users" has both "Read" and "Write" permissions.
-9) Before running the program, ensure that Hadoop is running on your machine. The program may depend on Hadoop, so it's essential to have it set up and running correctly.
+1) Start by downloading the project repository from Git. Please, note, that the git repository contains the folder TO_USE. The following folder has all the essential resources I have been using to successfully run the project.
+2) Navigate to the NetRandomWalker directory: use your terminal or command prompt to navigate to the "NetRandomWalker" directory within the downloaded project folder.
+3) Before your run the project, please, make sure that your current setting satisfy the requirements: a) Scala version: 2.13.10; b) JDK version: 1.8; c) SBT version: 1.9.6; d) Apache Spark version: 3.5.0.
+4) After all the prerequisites are met, please, go to File -> Project Structure -> Modules -> Add -> JARs or Directories -> select TO_USE folder -> netmodelsim.jar -> select the uploaded module -> set scope to 'Compile' -> click 'Apply' -> click 'OK'. By doing so I ensure that the essential injected binary files will not be missing. The following .jar file allows me to get access to the methods implemented in the original project created by Dr. Mark. Specified setting in the build.sbt allow to mix multiple Scala versions without any errors.
+5) In your terminal, run the following command to clean, compile, and execute the project: `sbt clean compile run`. The following command successfully launched the Main class of the program which contains the essential methods for program execution of the written methods within other objects.
+6) To run tests and ensure the code's functionality, use the following command: `sbt clean test`. The tests written are located within src/test/scala/RandomWalkerTest path directory. All the tests on my end ran successfully among with tests written by Dr. Mark.
+7) If you need to create a .jar file for your project, execute the following command: `sbt clean assembly`. The resulting jar will be placed in __NetGameSim/target/scala-3.2.2/netrandomwalker.jar__
+8) If you prefer using IntelliJ for development: a) Import the project into IntelliJ IDE. b) Build the project. c) Create a "configuration" for the Main.scala file. d) Set the configuration's arguments to be the input and output folders, separated by a space. NB: to run the project properly, a user, i.e. you, should specify the input/output paths in the application.conf file. The current configurations are set to default values which you may have to change to run the project successfully.
+9) Ensure that your local input/output folder has the necessary permissions to allow the program to read from and write to it. You can check and adjust folder permissions by right-clicking on the project directory, selecting "Properties," and navigating to the "Security" tab. Make sure that the group "Users" has both "Read" and "Write" permissions.
+10) Before running the program, ensure that Hadoop is running on your machine. The program may depend on Hadoop, so it's essential to have it set up and running correctly.
 ---
 
 ## Requirements:
