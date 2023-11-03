@@ -157,7 +157,7 @@ In essence, the battery of tests conducted evaluates the performance and functio
 
 ## Limitations:
 
-1) For local program execution, the user needs to have Java 8 or a higher version, sbt 1.6, and Hadoop 3.3.6 installed.
+1) For local program execution, the user needs to have JDK version 1.8, Scala 2.13.10, sbt 1.9.6, and Apache Spark 3.5.0 installed.
 2) The program supports processing multiple files within the same input folder if the user chooses to split the files, but it cannot manage input files from different locations. 
 3) The user should possess the capability to provide Read/Write permissions to the "Users" group for the LogFileGenerator project folder. This typically requires Administrator-level access.
 4) The feature for altering the name and extension of the output file is effective only during local execution. In other words, it does not modify the name and extension in the case of program execution on AWS EMR, particularly in S3 Bucket.
