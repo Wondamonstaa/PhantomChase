@@ -89,7 +89,7 @@ Located under DataManipulation folder, the following helper object was introduce
 
 ____________________
 
-3. SimRankMapReduce: 
+4. SimRankMapReduce: 
 
 The purpose of this object is to construct a Map/Reduce model, which operates exclusively on <key, value> pairs, that is, the framework views the input to the job as a set of <key, value> pairs and produces a set of <key, value> pairs as the output of the job, conceivably of different types. Inside the SimRankMapReduce object, an object of the SimRank class is created, which allows you to access methods for highlighting the similarities between two graphs and at the same time reducing the code pollution of the SimRankMapReduce object. Inside Mapper, the main method for the initial processing of received files is the map function. I use LongWritable and Text respectively as the input key and value since the CSV shard is read line by line. The output values for <key, value> pairs are Text and DoubleWritable. Inside map(), while reading a file line by line, its similarity rank is calculated via invoking calculateSimRank() function by passing each line of the processed CSV file as an argument. Thus, each line of the file is processed, followed by registration of NodeID and its similarity score for further processing. The program transfers these values to Reduce, where the final processing of the received data takes place. 
 
@@ -105,12 +105,12 @@ ___________________
 ___________________
 
 
-4. SimRank:
+5. SimRank:
 
 The following object, as mentioned earlier, is used to calculate the similarities between two graphs by analyzing the properties nodes and edges from both graphs. Using the given threshold, a similarity score is calculated, which subsequently serves as the output value in the Map and the input value in the Reducer. Based on the similarity score, as stated above, traceability links between nodes and edges are calculated.
 
 
-5. EdgesSimilarityMapReduce:
+6. EdgesSimilarityMapReduce:
 
 This component serves the purpose of establishing a Map/Reduce model that exclusively operates on pairs of data denoted as <key, value>. Inside the EdgesSimilarityMapReduce component, an instance of the SimRank class is created. This instantiation enables us to access methods for evaluating similarities between two graphs, specifically edges, all while reducing the code complexity within the EdgesSimilarityMapReduce object.
 
@@ -126,7 +126,7 @@ _______________
 ________________
 
 
-6. NodeSimilarity:
+7. NodeSimilarity:
 
 The following object serves its primary role as a helper and the basis for implementing the methods in other objects, including SimRank.
 
