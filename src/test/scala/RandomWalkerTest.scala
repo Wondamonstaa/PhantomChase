@@ -1,7 +1,9 @@
+import DataManipulation.Mixer
 import NetGraphAlgebraDefs.{NetGraph, NodeObject}
-import .RandomWalker
 import SimRankAlgorithm.SimRank
 import Utilz.NGSConstants.obtainConfigModule
+import Walker.RandomWalker
+import Walker.RandomWalker.RandomWalker
 import com.typesafe.config.{Config, ConfigFactory}
 import org.apache.hadoop.io.DoubleWritable
 import org.apache.spark.SparkContext
@@ -10,6 +12,7 @@ import org.scalatest.BeforeAndAfter
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 import org.scalatestplus.mockito.MockitoSugar
+
 import java.io.File
 import java.util
 import java.util.ArrayList

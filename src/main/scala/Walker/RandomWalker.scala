@@ -1,14 +1,15 @@
 package Walker
 
-import DataManipulation.{Mixer, DataConverter, ArgumentParser}
+import DataManipulation.{ArgumentParser, DataConverter, Mixer}
 import NetGraphAlgebraDefs.{NetGraph, NodeObject}
 import SimRankAlgorithm.SimRank
-import com.typesafe.config.ConfigFactory
+import com.typesafe.config.{Config, ConfigFactory}
 import org.apache.hadoop.io.{DoubleWritable, Text}
 import org.apache.spark._
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.SparkSession
 import org.slf4j.Logger
+
 import java.net.InetAddress
 import scala.annotation.tailrec
 import scala.collection.JavaConverters._
@@ -20,7 +21,7 @@ object RandomWalker {
   class RandomWalker() extends Serializable {}
 
   val logger: Logger = org.slf4j.LoggerFactory.getLogger("RandomWalker")
-  val config = ConfigFactory.load()
+  val config: Config = ConfigFactory.load()
 
   //The following helper function is used to get the random node on the graph
   def getRandomNode(netGraph: NetGraph, random: Random, currentNode: NodeObject): NodeObject = {
@@ -237,7 +238,7 @@ object RandomWalker {
 
     // Stop the Spark session.
     spark.stop()
-    logger.info(s"Stopped")
+    logger.info(s"Spark Session Has Been Stopped")
   }
 
 
