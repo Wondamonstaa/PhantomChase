@@ -99,7 +99,8 @@ ___________________
 
 # Sample output:
 
-<img width="316" alt="Screenshot 2023-11-03 at 12 07 47 AM" src="https://github.com/Wondamonstaa/NetRandomWalker/assets/113752537/c1875a87-1bfc-49f2-bc4d-191171aa0232">
+<img width="317" alt="Screenshot 2023-11-03 at 12 10 13 AM" src="https://github.com/Wondamonstaa/NetRandomWalker/assets/113752537/73c6cc14-c041-425a-a76c-0a2d32f33d1a">
+
 
 
 
