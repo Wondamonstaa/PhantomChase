@@ -137,7 +137,8 @@ _______________
 
 # Sample output:
 
-<img width="197" alt="Screenshot 2023-10-10 at 10 46 20 AM" src="https://github.com/Wondamonstaa/NetGameSim_Project1/assets/113752537/17c0556c-b977-4310-86c0-eb75f63ac190">
+<img width="348" alt="Screenshot 2023-11-03 at 12 50 55 AM" src="https://github.com/Wondamonstaa/NetRandomWalker/assets/113752537/312eaadd-fb9b-42ee-8b66-908f89f772e7">
+
 
 ________________
 
