@@ -144,7 +144,7 @@ ________________
 
 7. NodeSimilarity:
 
-The following object serves its primary role as a helper and the basis for implementing the methods in other objects, including SimRank.
+The following object serves its primary role as a helper and the basis for implementing the methods in other objects, including SimRank. The primary goal is to implement additional functionality and methods that will be useful in computing the similarity ratio between nodes and edges using SimRank algorithm.
 
 
 ## Test Cases
