@@ -7,7 +7,7 @@ Repo for the NetRandomWalker Project 2 for CS 441 Fall 2023
 
 ---
 
-AWS EC2 IaaS Deployment YouTube link: EDIT
+AWS EMR Deployment YouTube link: https://youtu.be/_UbQjqmybAg
 
 ---
 
@@ -83,7 +83,7 @@ ____________________
 
 3. Mixer:
 
-Located under DataManipulation folder, the following helper object was introduced to ease the load on DataConverter object as well as to simplify the method of extracting the data from the graph nodes and edges for further shuffling and subsequent usage of the obtained information. The following object contains 3 methods: 1) Using the exec() method, the Mixer object loads the graphs, accesses their nodes and edges, and invokes the other two object methods; 2) Next, combineAndWriteToCSV() and writeNodesToCSV() methods shuffle the generated files using monadic operations to create thousands of possible combinations of original and perturbed counterparts containing the path walked by the RandomWalk algorithm to detect whether the attack of the Man in the Middle was succesful or not.
+Located under DataManipulation folder, the following helper object was introduced to ease the load on DataConverter object as well as to simplify the method of extracting the data from the graph nodes and edges for further shuffling and subsequent usage of the obtained information. The following object contains 3 methods: 1) Using the exec() method, the Mixer object loads the graphs, accesses their nodes and edges, and invokes the other two object methods; 2) Next, combineAndWriteToCSV() and writeNodesToCSV() methods shuffle the generated files using Apache Spark functionality allowing to read and store the data in the DataFrame object, access it and, using monadic operations, create thousands of possible combinations of original and perturbed counterparts containing the path walked by the RandomWalk algorithm to detect whether the attack of the Man in the Middle was succesful or not.
 
 
 
