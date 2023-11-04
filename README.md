@@ -7,7 +7,7 @@ Repo for the NetRandomWalker Project 2 for CS 441 Fall 2023
 
 ---
 
-AWS EC2 IaaS Deployment YouTube link: EDIT
+AWS EMR Deployment YouTube link: https://youtu.be/_UbQjqmybAg
 
 ---
 
