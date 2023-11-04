@@ -121,6 +121,7 @@ object RandomWalker {
                   sparkContext: SparkContext,
                   randomPathOutputPath: String
                 ): Int = {
+
     val random = new Random
     val successfulAttacks = sparkContext.parallelize(Seq(0))
     val randomPathDetails = ListBuffer[String]()
@@ -158,7 +159,10 @@ object RandomWalker {
 
 
   /**
-   * The following helper function serves as a driver of the core functionality of the RandomWalk algorithm.
+   * Apache Spark is a distributed computing framework designed for big data processing and analytics.
+   * Spark operates in a distributed cluster environment, allowing it to efficiently process large datasets in parallel.
+   * To do so, Spark relies on a cluster manager (Mesos, YARN) to allocate and manage resources across the cluster.
+   * runRandomWalk() => the driver program for the Apache Spark
    *
    * @param originalGraphFileName                 The filename of the original graph.
    * @param originalGraphPath                     The path of the original graph file.
@@ -193,6 +197,14 @@ object RandomWalker {
     // Load the original and perturbed graphs.
     val originalGraph: Option[NetGraph] = NetGraph.load(originalGraphFileName, originalGraphPath)
     val perturbedGraph: Option[NetGraph] = NetGraph.load(perturbedGraphFileName, perturbedGraphPath)
+
+    /**
+     * In a nutshell, Spark utilizes a cluster of worker nodes to perform data processing.
+     * These worker nodes communicate with the driver program, executing operations on Resilient Distributed Datasets.
+     * RDDs are partitioned, immutable data collections processed in parallel.
+     * Spark orchestrates data processing by creating a Directed Acyclic Graph of tasks, each corresponding to an RDD operation,
+     * ensuring efficient parallel execution, data locality, and fault tolerance.
+     */
 
     //The entry point to programming Spark with the Dataset and DataFrame API.
     val spark = SparkSession.builder()
@@ -240,7 +252,6 @@ object RandomWalker {
     spark.stop()
     logger.info(s"Spark Session Has Been Stopped")
   }
-
 
   def main(args: Array[String]): Unit = {}
 }

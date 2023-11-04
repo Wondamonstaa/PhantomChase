@@ -82,6 +82,18 @@ object Mixer {
 
 
   //@main
+  /**
+   * Apache Spark is a distributed computing framework designed for big data processing and analytics.
+   * Spark operates in a distributed cluster environment, allowing it to efficiently process large datasets in parallel.
+   * To do so, Spark relies on a cluster manager (Mesos, YARN) to allocate and manage resources across the cluster.
+   * @param spark
+   * @param originalGraphFileName
+   * @param originalGraphPath
+   * @param randomPathOutputPath
+   * @param randomFilePath
+   * @param combinedFilePath
+   * @param loadedOriginalNodes
+   */
   def exec(spark: SparkSession, originalGraphFileName: String, originalGraphPath: String, randomPathOutputPath: String, randomFilePath: String, combinedFilePath: String, loadedOriginalNodes: String): Unit = {
 
     // Here we load in the Original Ngs Graph
