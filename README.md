@@ -1,14 +1,13 @@
-# CS 441 Project 2 Fall 2023
+# CS 441 Project 3 Fall 2023
 ## Kiryl Baravikou
 ### UIN: 656339218
 ### NetID: kbara5
 
-Repo for the NetRandomWalker Project 2 for CS 441 Fall 2023
+Repo for the PhantomChase Project 3 for CS 441 Fall 2023
 
 ---
 
-AWS EMR Deployment YouTube link: https://youtu.be/_UbQjqmybAg
-
+AWS EMR Deployment YouTube link: EDIT
 ---
 
 ## How to Run the Project:
