@@ -51,6 +51,24 @@ Other Requirements:
 
 This section will provide a detailed description of each of the classes that I implemented in this project, as well as the rationale for using one or another class when planning and developing the design of an algorithm for calculating similarities in the generated graphs:
 
+
+1. GraphHolder:
+
+GraphHolder, located under src/main/scala/Game, this time serves as the entry point of the program. The following object obtains the configurations, specified in the application.conf file, using the ConfigFactory class, and loads the essential resources for the game to play. The entry point of the object is the 'main' method, which was left empty to simplify the program flow and make the objects accessible by the GameLogic and other objects easily throughout the project. After getting the configurations using the globalConfig value of Config type, using the load() method I load the original and perturbed graphs located under the specified paths, which later will be accessed by the GameLogic object to successfully run the server.
+
+# Sample output:
+
+_________________
+
+![WhatsApp Image 2023-09-11 at 10 02 36 PM](https://github.com/Wondamonstaa/NetGameSim_Project1/assets/113752537/208bc260-e8e5-4099-a62d-7e72a49561a1)
+
+
+_________________
+
+2. 
+
+
+
 1. Main: 
 
 Located under src/main/scala, the Main object serves as a starting point of the program. This object includes all the necessary imported libraries and modules that allow the code to work safely without any issues. The entry point of the object is the 'main' function, within which via using the ConfigFactory class, I access the specified configration for the program located under application.conf file. After the configurations loading has successfully completed, the provided algorithm locates the provided input files, accesses them and sends the data to the ArgumentParser object, which is responsible for collecting the necessary arguments for subsequent cascading calls to the functions of this project. Inside the ArgumentParser object, using the parse() method, the object accesses the provided input files, and, finally, passes them to the RandomWalker object via accessing runRandomWalk() method of that object that further loads the generated graphs by deserializing the provided .ngs files. Below you can see an example of a generated graph containing 8000 nodes.
