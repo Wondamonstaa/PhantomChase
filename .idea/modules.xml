@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RandomWalks.iml" filepath="$PROJECT_DIR$/.idea/modules/RandomWalks.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RandomWalks-build.iml" filepath="$PROJECT_DIR$/.idea/modules/RandomWalks-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Policeman'n'Thief.iml" filepath="$PROJECT_DIR$/.idea/modules/Policeman'n'Thief.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Policeman'n'Thief-build.iml" filepath="$PROJECT_DIR$/.idea/modules/Policeman'n'Thief-build.iml" />
     </modules>
   </component>
 </project>
