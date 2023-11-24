@@ -42,7 +42,8 @@ a) The game starts by placing Policeman and Thief randomly at some nodes in the 
 b) If Thief is placed at the node with the valuable data then Thief wins by default and the game restarts; 
 c) If Policeman catches the Thief before he/she enters the node where the valuableData attribute is 'true', then the Policeman wins and the game restarts; 
 d) If the Thief enters the node with the valuableData before the Policeman catches him/her, the Thief wins and the game restarts; 
-e) the first player with no available moves left loses the game.
+e) The first player with no available moves left loses the game;
+f) If a player makes a move in perturbed graph that cannot be performed in original graph he/she loses the game in addition to the basic game rules. 
 5. Evaluation: 
 a) Assess the goodness of your algorithm by generating the confidence score for each node; 
 b) Additionally, implement the algorithm for finding the shortest possbile path leading to the node where the valuableData attribute holds the 'true' value.
@@ -102,7 +103,7 @@ The Statistics object serves as a storage for the helper functions used to produ
 _________________
 
 <img width="376" alt="Screenshot 2023-11-23 at 9 39 42 PM" src="https://github.com/Wondamonstaa/PhantomChase/assets/113752537/b3663824-4f39-4f40-a4fb-f16600543560">
-
+<img width="346" alt="Screenshot 2023-11-23 at 10 01 47 PM" src="https://github.com/Wondamonstaa/PhantomChase/assets/113752537/cbff676b-9358-4934-a06c-fe879e751bad">
 
 _________________
 
