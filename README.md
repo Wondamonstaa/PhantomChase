@@ -134,23 +134,9 @@ _________________
 _________________
 
 
-1. Main: 
+6. DataConverter:
 
-Located under src/main/scala, the Main object serves as a starting point of the program. This object includes all the necessary imported libraries and modules that allow the code to work safely without any issues. The entry point of the object is the 'main' function, within which via using the ConfigFactory class, I access the specified configration for the program located under application.conf file. After the configurations loading has successfully completed, the provided algorithm locates the provided input files, accesses them and sends the data to the ArgumentParser object, which is responsible for collecting the necessary arguments for subsequent cascading calls to the functions of this project. Inside the ArgumentParser object, using the parse() method, the object accesses the provided input files, and, finally, passes them to the RandomWalker object via accessing runRandomWalk() method of that object that further loads the generated graphs by deserializing the provided .ngs files. Below you can see an example of a generated graph containing 8000 nodes.
-
-# Sample output:
-
-_________________
-
-![WhatsApp Image 2023-09-11 at 10 02 36 PM](https://github.com/Wondamonstaa/NetGameSim_Project1/assets/113752537/208bc260-e8e5-4099-a62d-7e72a49561a1)
-
-
-_________________
-
-
-2. DataConverter:
-
-DataConverter object is responsible for converting the graphs into a human-friendly readable format, and for the subsequent sharding of the generated files for the purpose of parallel processing in Map/Reduce model. After receiving the serialized graphs as arguments, the processFile() function begins processing them simultaneously by calling the processFilesToCsv() and processEdgesToCsv() functions to access nodes and edges of the two graphs via using nodes() and edges() function calls respectively. Subsequently, shuffling of objects occurs with each other in order to create all kinds of combinations that will be used as arguments when calculating similarities via SimRank in the Map/Reduce. After generating combinations, the sharder() function is called, which splits the resulting files into shards, the size of which depends on the argument specified when calling this function. All received shards are saved in two specified folders for user convenience.
+DataConverter object is responsible for converting the graphs into a human-friendly readable format, and for the subsequent sharding of the generated files for the purpose of parallel processing in Map/Reduce model. This time the following object has been used for testing purposes. After receiving the serialized graphs as arguments, the processFile() function begins processing them simultaneously by calling the processFilesToCsv() and processEdgesToCsv() functions to access nodes and edges of the two graphs via using nodes() and edges() function calls respectively. Subsequently, shuffling of objects occurs with each other in order to create all kinds of combinations that will be used as arguments when calculating similarities via SimRank in the Map/Reduce. After generating combinations, the sharder() function is called, which splits the resulting files into shards, the size of which depends on the argument specified when calling this function. All received shards are saved in two specified folders for user convenience.
 
 # Sample output:
 
@@ -158,12 +144,10 @@ ____________________
 
 <img width="1320" alt="Screenshot 2023-11-02 at 11 37 58 PM" src="https://github.com/Wondamonstaa/NetRandomWalker/assets/113752537/e88539db-1024-4f8f-bea1-b1868d892a51">
 
-
-
 ____________________
 
 
-3. Mixer:
+7. Mixer:
 
 Located under DataManipulation folder, the following helper object was introduced to ease the load on DataConverter object as well as to simplify the method of extracting the data from the graph nodes and edges for further shuffling and subsequent usage of the obtained information. The following object contains 3 methods: 1) Using the exec() method, the Mixer object loads the graphs, accesses their nodes and edges, and invokes the other two object methods; 2) Next, combineAndWriteToCSV() and writeNodesToCSV() methods shuffle the generated files using Apache Spark functionality allowing to read and store the data in the DataFrame object, access it and, using monadic operations, create thousands of possible combinations of original and perturbed counterparts containing the path walked by the RandomWalk algorithm to detect whether the attack of the Man in the Middle was succesful or not.
 
@@ -171,11 +155,11 @@ Located under DataManipulation folder, the following helper object was introduce
 
 ____________________
 
-4. RandomWalker: 
+8. RandomWalker: 
 
 The primary purpose of the following object is implementation of the RandomWalk algorithm using Apache Spark, a unified analytics engine for large-scale data processing. Main method surves as the entry point of the RandomWalker object. The object contains the driver method called runRandomWalk(), whose goal is to run the main functionality of the class, enabling it to perform the random walks around the provided perturbed graph using the tuned algorithm. Inside the runRandomWalk() method, I initialize the Spark Session via using in-built builder() method which is the he entry point to programming Spark with the Dataset and DataFrame API. Next, the method checks whether the graps' binaries were loaded successfully, and creates an adjacency matrix of the nodes and edges via invoking adjacencyMatrix() method. Following that, the randomWalk() is being invoked with the specified number of required arguments. Inside the randomWalk() method, via using the helper function getRandomNode(), I access the random connected to the graph node which will serve as the starting point of the path we are going to explore. Using the helper explorePath() and the powerful functionality of the Apache Spark engine, via parallelizing computations I begin randomly exploring the graph starting at the initial node, and then connecting to the closest successor via checking the neighbors using adjacencyMatrix() method. The explored path is stored in the Resilient Distributed Dataset, which will be partitioned and saved as a text file containing the result of the walked path after the algorithm finishes executing. The resulting output .txt file contains the path randomWalk() travelled across the graph. 
 
-Next, within the runRandomWalk() method the execution continues by invoking the exec() method of the Mixer object for generating combinations of shards between the path taken by randomWalk() algorithm and the possible scenarios that the agent could have travelled across the original graph. Finally, the result of the exec() function is accessed via the sparkSession object and stored into the Resilient Distributed Dataset of String type. Next, the data stored in the current RDD is accessed by another RDD of type String via using the map() method: every single line of the stored is being accessed, and then calculateSimRank() and calculateSimRankWithTracebilityLinks() methods are being invoked to produce the statistics about the graphs and to detect whether the attack of the Man in the Middle was successful or unsucessful via comparing the properties of nodes and edges, as well as detecting how many honeypots were mistakenly accessed by the attacker. Based on the results of the comparison, and the number of matches between the two, different score is assigned, which is later compared to the selected threshold. As a result, the 'part-00000' file with the statistics is produced for further analysis. Please, keep in mind that this is the file you will need to check in order to obtain the results. The following file will be located at the specified folder for the output files from the selected Apache Spark job. For further explanation of the obtained results, please, refer to the last part of the report called "Note for Dr. Mark Grechanik and Utsav". 
+Next, within the runRandomWalk() method the execution continues by invoking the exec() method of the Mixer object for generating combinations of shards between the path taken by randomWalk() algorithm and the possible scenarios that the agent could have travelled across the original graph. Finally, the result of the exec() function is accessed via the sparkSession object and stored into the Resilient Distributed Dataset of String type. Next, the data stored in the current RDD is accessed by another RDD of type String via using the map() method: every single line of the stored is being accessed, and then calculateSimRank() and calculateSimRankWithTracebilityLinks() methods are being invoked to produce the statistics about the graphs and to detect whether the attack of the Man in the Middle was successful or unsucessful via comparing the properties of nodes and edges, as well as detecting how many honeypots were mistakenly accessed by the attacker. Based on the results of the comparison, and the number of matches between the two, different score is assigned, which is later compared to the selected threshold. As a result, the 'part-00000' file with the statistics is produced for further analysis. Please, keep in mind that this is the file you will need to check in order to obtain the results. The following file will be located at the specified folder for the output files from the selected Apache Spark job.
 
 ___________________
 
@@ -184,13 +168,10 @@ ___________________
 <img width="323" alt="Screenshot 2023-11-03 at 12 11 00 AM" src="https://github.com/Wondamonstaa/NetRandomWalker/assets/113752537/34fcb568-fe04-4b8a-a6f4-9ae89a269cb0">
 
 
-
-
-
 ___________________
 
 
-5. SimRank:
+9. SimRank:
 
 The following object, as mentioned earlier, is used to calculate the similarities between two graphs by analyzing the properties nodes and edges from both the original and perturbed graphs. Using the specified threshold and the reward system, the algorithm performs the comparison of the data stored in the nodes and edges of both graphs to determine the current similarity score between them which is used for the final decision based on which the one can tell whether or not are two compared objects are the same. Additionally, the following algorithm has been modified the way to keep track of the number of successful and unsuccessful attacks performed by the Man in the Middle while trying to steal the valuable data from the system. The calculations are done by keeping an eye on how many times the honepots, represented by the added nodes in the perturbed graphs about which the attacker does not know, have been accessed. If the honepot has been accessed in order to obtain the data stored there, the attacker will be immediately flagged by the system, and subsequent instructions will be sent to eliminate the threat. Additionally, the following algorithm computes similarity and F-1 score, as well as the statistics about random walks, such as min/max/median/mean number of nodes in these walks and the ratio of the number of random walks resulting in successful attacks to the total number of random walks. Finally, as mentioned previously, the result of the computations will be stored in the 'part-00000' file with the statistics is produced for further analysis.
 
@@ -202,47 +183,30 @@ ___________________
 <img width="448" alt="Screenshot 2023-11-03 at 12 21 14 AM" src="https://github.com/Wondamonstaa/NetRandomWalker/assets/113752537/ef7f9dc4-0b4d-45bb-9c9d-b2c81b692683">
 
 
-
-
-
-
 ___________________
 
 
 
-6. EdgeRDDSuite:
-
-Inside the EdgeRDDSuite object, the LocalSparkContext trait is used to manage a local SparkContext variable, primarily in the context of testing. It ensures that a new SparkContext is created, used within a specified function, and then correctly stopped after the function's execution. The following object is useful for running Spark-related tests and ensuring that the SparkContext doesn't leak or interfere with other tests. Besides that, the EdgeRDDSuite object contains the helper tripleWalk() method which helps to perform the RandomWalk algorithm on the input graph using parallelization and triplets in combination with monadic operations to maximize the efficiency and resource usage of the machine. The results are stored in the Resilient Distributes Datasets, collected, and, finally, stored in the specified output directory for further analysis.
-
-
-_______________
-
-# Sample output:
-
-<img width="348" alt="Screenshot 2023-11-03 at 12 50 55 AM" src="https://github.com/Wondamonstaa/NetRandomWalker/assets/113752537/312eaadd-fb9b-42ee-8b66-908f89f772e7">
-
-
-________________
-
-
-7. NodeSimilarity:
+10. NodeSimilarity:
 
 The following object serves its primary role as a helper and the basis for implementing the methods in other objects, including SimRank. The primary goal is to implement additional functionality and methods that will be useful in computing the similarity ratio between nodes and edges using SimRank algorithm.
 
 
 ## Test Cases
 
-The tests can be run using 'sbt clean test' command or by directly invoking the class SimRankTest, located under the following path: src/main/Test/RandomWalkerTest.scala
+The tests can be run using 'sbt clean test' command or by directly invoking the class RouteTest, located under the following path: src/main/Test/RouteTest.scala
 
-In essence, the battery of tests conducted evaluates the performance and functionality of the RandomWalker, specifically the functionality of the RandomWalk algorithm and its ability clearly and efficiently travel across the nodes and edges of the provided graph, and SimRank classes, alongside the sharding function, assessing their proficiency in executing tasks accurately and effectively. These tests serve as a robust validation mechanism, ensuring that both components operate seamlessly and in accordance with their intended objectives.
+In essence, the battery of tests conducted evaluates the performance and functionality of the project, specifically the functionality of the 'curl' commands, path algorithms and its ability clearly and efficiently travel across the nodes and edges of the provided graph, and SimRank and RandomWalk classes, alongside the sharding function, assessing their proficiency in executing tasks accurately and effectively. These tests serve as a robust validation mechanism, ensuring that both components operate seamlessly and in accordance with their intended objectives.
 
 
 ## Limitations:
 
-1) For local program execution, the user needs to have JDK version 1.8, Scala 2.13.10, sbt 1.9.6, and Apache Spark 3.5.0 installed.
+1) For local program execution, the user needs to have JDK version 1.8, Scala 2.13.10, sbt 1.9.6, Apache Spark 3.5.0, and Akka HTTP 10.5.0 installed.
 2) The program supports processing multiple files within the same input folder if the user chooses to split the files, but it cannot manage input files from different locations. 
 3) The user should possess the capability to provide Read/Write permissions to the "Users" group for the LogFileGenerator project folder. This typically requires Administrator-level access.
 4) The feature for altering the name and extension of the output file is effective only during local execution. In other words, it does not modify the name and extension in the case of program execution on AWS EC2 IaaS, particularly in S3 Bucket.
+5) Due to occasional unstable connection with the server and minor bugs with the load() function, the test cases may fail 1/10 times, as well as the disconnection from the web server can occur.
+6) To prevent the internal server errors, please, correctly specify the playerId for each player, such as 'thief' or 'policeman' while testing the functionality using 'curl' commands in the terminal or any other resources.
 
 
 ## Note for Dr. Mark Grechanik and Utsav
