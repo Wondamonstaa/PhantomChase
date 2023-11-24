@@ -102,7 +102,7 @@ The Statistics object serves as a storage for the helper functions used to produ
 
 _________________
 
-<img width="387" alt="Screenshot 2023-11-23 at 10 06 56 PM" src="https://github.com/Wondamonstaa/PhantomChase/assets/113752537/fb417b94-1718-411a-bc06-a96bce3dc6ec">
+<img width="389" alt="Screenshot 2023-11-23 at 10 07 57 PM" src="https://github.com/Wondamonstaa/PhantomChase/assets/113752537/88ddc984-00d3-4987-ad07-200f747d1088">
 <img width="346" alt="Screenshot 2023-11-23 at 10 01 47 PM" src="https://github.com/Wondamonstaa/PhantomChase/assets/113752537/cbff676b-9358-4934-a06c-fe879e751bad">
 
 _________________
