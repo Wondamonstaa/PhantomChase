@@ -27,11 +27,25 @@ AWS EMR Deployment YouTube link: EDIT
 
 The goal of the project is to expand the experience with solving distributed computational problems using cloud computing technologies. Next, design and implement a variant of the graph game called 'Policeman and Thief', deploy it on the cloud as a microservice and enable clients to play it using HTTP requests. The following core functionalities must be met:
 
-1. Design: 1) Design the P/T game, explain the design and architecture, and then implement and run it on the big generated data graphs using predefined configuration parameters for NetGraphSim; 2) Design and implementation of the game must be done in cloud using microservices such that the clients can play this game over the Internet; 3) Players submit their moves/queries using 'curl', 'Postman' or using HTTP client request functionality in IntelliJ and the game server will accept these requests, and produce responses to the clients.
+1. Design: 
+a) Design the P/T game, explain the design and architecture, and then implement and run it on the big generated data graphs using predefined configuration parameters for NetGraphSim; 
+b) Design and implementation of the game must be done in cloud using microservices such that the clients can play this game over the Internet; 
+c) Players submit their moves/queries using 'curl', 'Postman' or using HTTP client request functionality in IntelliJ and the game server will accept these requests, and produce responses to the clients.
 2. RESTful services: implement a RESTful service for retrieving log messages using one of the popular frameworks: Play or Finch/Finagle or Akka HTTP or Scalatra. 
-4. Functionality: 1) Players must be able to make moves by taking turns; 2) Each of the players must be able to query the perturbed graph to obtain information about their own and the opponent's location nodes and the adjacent nodes; 3) Each of the nodes obtained using the query comes with some confidence score that the node or the edges that lead to it were not perturbed; 4) Players can also query the PG to determine how far they are from the nearest node with the valuable data. 5) If a player makes a move in PG that cannot be performed in OG s/he loses the game in addition to the basic game rules.
-5. Rules: 1) The game starts by placing Policeman and Thief randomly at some nodes in the original graph and their counterparts at perturbed graph; 2) If Thief is placed at the node with the valuable data then Thief wins by default and the game restarts; 3) If Policeman catches the Thief before he/she enters the node where the valuableData attribute is 'true', then the Policeman wins and the game restarts; 4) If the Thief enters the node with the valuableData before the Policeman catches him/her, the Thief wins and the game restarts; 5) the first player with no available moves left loses the game.
-6. Evaluation: 1) Assess the goodness of your algorithm by generating the confidence score for each node; 2) Additionally, implement the algorithm for finding the shortest possbile path leading to the node where the valuableData attribute holds the 'true' value.
+3. Functionality: 
+a) Players must be able to make moves by taking turns; 
+b) Each of the players must be able to query the perturbed graph to obtain information about their own and the opponent's location nodes and the adjacent nodes; 
+c) Each of the nodes obtained using the query comes with some confidence score that the node or the edges that lead to it were not perturbed; 
+d) Players can also query the PG to determine how far they are from the nearest node with the valuable data. 5) If a player makes a move in PG that cannot be performed in OG s/he loses the game in addition to the basic game rules.
+4. Rules: 
+a) The game starts by placing Policeman and Thief randomly at some nodes in the original graph and their counterparts at perturbed graph; 
+b) If Thief is placed at the node with the valuable data then Thief wins by default and the game restarts; 
+c) If Policeman catches the Thief before he/she enters the node where the valuableData attribute is 'true', then the Policeman wins and the game restarts; 
+d) If the Thief enters the node with the valuableData before the Policeman catches him/her, the Thief wins and the game restarts; 
+e) the first player with no available moves left loses the game.
+5. Evaluation: 
+a) Assess the goodness of your algorithm by generating the confidence score for each node; 
+b) Additionally, implement the algorithm for finding the shortest possbile path leading to the node where the valuableData attribute holds the 'true' value.
 
 Other Requirements:
 1) The output files should be in the format of .csv, .yaml or any other human-readible format.
