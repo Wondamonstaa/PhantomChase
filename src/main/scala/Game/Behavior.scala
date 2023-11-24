@@ -1,11 +1,12 @@
-package org
+package Game
 
+import Game.GameLogic.Puppets
 import NetGraphAlgebraDefs.{NetGraph, NodeObject}
 import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.server.Directives.complete
 import akka.http.scaladsl.server.directives.RouteDirectives
-import org.GameLogic.Puppets.{latestPolicemanNode, latestThiefNode}
-import org.GameLogic.Puppets
+import GameLogic.Puppets.{latestPolicemanNode, latestThiefNode}
+import GameLogic.Puppets
 
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 import scala.util.Random

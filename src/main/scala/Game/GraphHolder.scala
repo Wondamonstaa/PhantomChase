@@ -1,4 +1,4 @@
-package org
+package Game
 
 import NetGraphAlgebraDefs.NetGraph
 import NetGraphAlgebraDefs.NetGraph.logger

@@ -1,0 +1,21 @@
+Path to Valuable Node: NodeObject(185,3,16,1,79,1,1,5,0.7547969141065618,false)
+Path to Valuable Node: NodeObject(403,5,18,1,4,1,5,1,0.156830809587032,false)
+Path to Valuable Node: NodeObject(184,0,2,1,35,0,4,17,0.05035587375921158,false)
+Path to Valuable Node: NodeObject(226,5,5,1,31,2,2,2,0.6627623979743833,false)
+Path to Valuable Node: NodeObject(379,6,9,1,24,2,2,2,0.7566474243950064,false)
+Path to Valuable Node: NodeObject(455,2,5,1,45,0,6,12,0.39025153632148624,false)
+Path to Valuable Node: NodeObject(7,0,5,1,44,4,4,12,0.6095914143443516,false)
+Path to Valuable Node: NodeObject(298,4,7,1,32,3,0,2,0.9131248857670016,false)
+Path to Valuable Node: NodeObject(416,6,10,1,13,0,6,15,0.29001225039008793,false)
+Path to Valuable Node: NodeObject(400,3,12,1,48,3,0,10,0.1443618270272905,false)
+Path to Valuable Node: NodeObject(486,6,19,1,42,2,6,11,0.9146085587545212,false)
+Path to Valuable Node: NodeObject(395,2,9,1,65,0,6,6,0.8868890135357071,true)
+
+Confidence Score: 0.25
+Adjacent Node: NodeObject(251,6,19,1,86,2,0,12,0.576919065001465,false)
+Adjacent Node: NodeObject(403,5,18,1,4,1,5,1,0.156830809587032,false)
+Adjacent Node: NodeObject(183,3,12,1,96,1,4,1,0.9020683994175228,false)
+Adjacent Node: NodeObject(179,6,6,1,97,3,0,3,0.7174329778906245,false)
+Move: Move(thief,NodeObject(185,3,16,1,79,1,1,5,0.7547969141065618,false))
+
+Distance to Valuable Node: 23.39870433730343

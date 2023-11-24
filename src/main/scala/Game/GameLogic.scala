@@ -1,12 +1,12 @@
-package org
+package Game
 
 //Object imports
-import org.Behavior._
-import org.Statistics._
-import org.Yaml._
+import Behavior._
+import Statistics._
+import Yaml._
 import NetGraphAlgebraDefs.NetGraph.logger
 import NetGraphAlgebraDefs.{NetGraph, NodeObject}
-import org.GameLogic.Puppets.{latestPolicemanNodePerturbed, latestThiefNodePerturbed}
+import GameLogic.Puppets.{latestPolicemanNodePerturbed, latestThiefNodePerturbed}
 import org.apache.spark.sql.Dataset
 
 //Spark imports
@@ -22,7 +22,7 @@ import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport._
 import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.server.Directives._
 import akka.util.Timeout
-import org.GameLogic.Puppets.{latestPolicemanNode, latestThiefNode}
+import GameLogic.Puppets.{latestPolicemanNode, latestThiefNode}
 
 //JSON
 import spray.json.DefaultJsonProtocol._
@@ -141,6 +141,8 @@ object GameLogic {
     // Track the latest nodes for each user: original graph
     var latestThiefNode: NodeObject = findStartingPositions(graph)
     var latestPolicemanNode: NodeObject = findStartingPositions(graph)
+    logger.info(s"Latest Thief Node: $latestThiefNode")
+    logger.info(s"Latest Policeman Node: $latestPolicemanNode")
 
     //For testing purposes => Policeman arrests the thief immediately
     //var latestPolicemanNode: NodeObject = latestThiefNode
@@ -150,6 +152,8 @@ object GameLogic {
     // Track the latest nodes for each user: perturbed graph
     var latestThiefNodePerturbed: NodeObject = findStartingPositions(perturbedGraph)
     var latestPolicemanNodePerturbed: NodeObject = findStartingPositions(perturbedGraph)
+    logger.info(s"Latest Thief Node Perturbed: $latestThiefNodePerturbed")
+    logger.info(s"Latest Policeman Node Perturbed: $latestPolicemanNodePerturbed")
 
     /**
      * Defines the initial behavior for the actors.
@@ -293,6 +297,7 @@ object GameLogic {
             case _ => 0.0
           }
 
+          logger.info(s"Sending the response to the client...")
           replyTo ! Moves(playerMoves, playerAdjacentNodes, distance, path, confidenceScore)
           Behaviors.same
       }
@@ -349,6 +354,7 @@ object GameLogic {
     //To specify the turns of the players
     var currentPlayer: String = "thief"
 
+    logger.info("Establishing the reliable route...")
     val route =
       pathPrefix("server") {
         concat(
@@ -393,7 +399,6 @@ object GameLogic {
                             welcome()
                             StatusCodes.BadRequest -> "Thief has stolen the valuable data! Game over. Restarting..."
                           }
-
                         }
 
                         // Check if the next move is valid
@@ -591,11 +596,14 @@ object GameLogic {
 
                 // Save the combined dataset to a text file, overwriting the existing content
                 combinedData.coalesce(1).write.mode("overwrite").text(GraphHolder.sparkPath)
-              } catch {
+              }
+              catch {
                 case e: Exception =>
                   logger.error("Error saving data to text file", e)
-              } finally {
-                // Stop the Spark session
+              }
+              finally {
+
+                // Stop the Spark session.
                 spark.stop()
               }
 
@@ -606,10 +614,10 @@ object GameLogic {
 
           //The restart route for the game
           path("restart") {
-            //get {
+            get {
               restartGame()
-              complete(StatusCodes.OK, "Game restarted.")
-            //}
+              complete(StatusCodes.OK, "Game has been restarted.")
+            }
           }
         )
       }
@@ -626,9 +634,6 @@ object GameLogic {
     bindingFuture
       .flatMap(_.unbind()) // trigger unbinding from the port
       .onComplete(_ => system.terminate()) // and shutdown when done
-
-    // Stop the Spark session.
-    spark.stop()
   }
 }
 

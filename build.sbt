@@ -5,7 +5,7 @@ ThisBuild / version := "0.1.0-SNAPSHOT"
 // Define the Scala version to be used.
 ThisBuild / scalaVersion := "2.13.10"
 // Define the project name.
-name := "RandomWalks"
+name := "Policeman'n'Thief"
 
 compileOrder := CompileOrder.JavaThenScala
 test / fork := true
@@ -33,6 +33,7 @@ val apacheCommonsVersion = "2.13.0"
 val jGraphTlibVersion = "1.5.2"
 val scalaParCollVersion = "1.0.4"
 //val guavaAdapter2jGraphtVersion = "1.5.2"
+val AkkaHttpVersion = "10.6.0"
 
 lazy val commonDependencies = Seq(
   "org.scala-lang.modules" %% "scala-parallel-collections" % scalaParCollVersion,
@@ -45,14 +46,22 @@ lazy val commonDependencies = Seq(
   "org.apache.spark" %% "spark-sql" % sparkVersion, // Spark SQL
   "org.apache.spark" %% "spark-graphx" % sparkVersion, // Spark GraphX
   "org.apache.spark" %% "spark-mllib" % sparkVersion, // Spark MLlib
-
+  "com.typesafe.akka" %% "akka-actor" % "2.8.0",
+  "com.typesafe.akka" %% "akka-http" % "10.5.0",
+  "com.typesafe.akka" %% "akka-stream" % "2.8.0",
+  "com.typesafe.akka" %% "akka-http-spray-json" % "10.5.0",
+  "com.typesafe.akka" %% "akka-actor-typed" % "2.8.0"
+  //"org.yaml" %% "snakeyaml" % "1.29"
   //"org.apache.spark" %% "spark-streaming" % sparkVersion,
   //"org.apache.spark" %% "spark-streaming-twitter" % sparkVersion
 ).map(_.exclude("org.slf4j", "*"))
 
 
 libraryDependencies ++= Seq(
-  "com.google.guava" % "guava" % "31.1-jre"
+  "com.google.guava" % "guava" % "31.1-jre",
+  "org.yaml" % "snakeyaml" % "2.0",
+  "com.typesafe.akka" %% "akka-http-testkit" % "10.5.0" % Test,
+  "com.typesafe.akka" %% "akka-testkit" % "2.8.0" % "test"
     exclude ("com.google.guava", "guava") // Exclude transitive Guava
 )
 
@@ -91,10 +100,12 @@ run / javaOptions ++= Seq(
 )
 
 // Define the main class. Replace with the actual main class of your application.
-Compile / mainClass := Some("com.lsc.Main")
-run / mainClass := Some("com.lsc.Main")
+//Compile / mainClass := Some("com.lsc.Main")
+//run / mainClass := Some("com.lsc.Main")
+Compile / mainClass := Some("Game.GameLogic")
+run / mainClass := Some("Game.GameLogic")
 
-val jarName = "netrandomwalker.jar"
+val jarName = "game.jar"
 /*assembly/assemblyJarName := jarName
 
 

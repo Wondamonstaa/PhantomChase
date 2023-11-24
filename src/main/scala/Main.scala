@@ -3,24 +3,10 @@ import Utilz.NGSConstants.obtainConfigModule
 import com.lsc.Main.logger
 import com.typesafe.config.{Config, ConfigFactory}
 import org.apache.spark.graphx._
+import Game.GameLogic._
 
 
 object Main {
-
-  //Abstraction for graph representation
-  abstract class Graph[VD, ED] {
-    val vertices: VertexRDD[VD]
-    val edges: EdgeRDD[ED]
-  }
-
-  //Abstraction for vertex property
-  class VertexProperty()
-  case class UserProperty(val name: String) extends VertexProperty
-  case class ProductProperty(val name: String, val price: Double) extends VertexProperty
-
-  // The graph might then have the type:
-  var graph: Graph[VertexProperty, String] = null
-
 
   def main(args: Array[String]): Unit = {
 

@@ -1,8 +1,10 @@
-package org
+package Game
 
+import Game.GameLogic.{Move, Moves}
 import NetGraphAlgebraDefs.NodeObject
-import org.GameLogic.{Move, Moves}
+import GameLogic.{Move, Moves}
 import org.yaml.snakeyaml.{DumperOptions, Yaml}
+
 import scala.jdk.CollectionConverters._
 import java.io.{FileWriter, PrintWriter}
 

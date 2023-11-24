@@ -1,5 +1,6 @@
 package SimRankAlgorithm
 
+
 import Utilz.CreateLogger
 import breeze.numerics.abs
 import org.apache.hadoop.io._

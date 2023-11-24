@@ -1,7 +1,7 @@
-package org
+package Game
 
 import NetGraphAlgebraDefs.{NetGraph, NodeObject}
-import org.GameLogic.Puppets.{graph, latestThiefNode}
+import GameLogic.Puppets.{graph, latestThiefNode}
 
 import scala.collection.mutable
 import scala.jdk.CollectionConverters.CollectionHasAsScala

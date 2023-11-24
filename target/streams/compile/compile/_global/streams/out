@@ -1,0 +1,245 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Behavior.scala:3:8: not found: object NetGraphAlgebraDefs[0m
+[0m[[0m[31merror[0m] [0m[0mimport NetGraphAlgebraDefs.{NetGraph, NodeObject}[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GraphHolder.scala:3:8: not found: object NetGraphAlgebraDefs[0m
+[0m[[0m[31merror[0m] [0m[0mimport NetGraphAlgebraDefs.NetGraph[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GraphHolder.scala:36:25: not found: type NetGraph[0m
+[0m[[0m[31merror[0m] [0m[0m  val netOriginalGraph: NetGraph = originalGraph.getOrElse {[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:8:8: not found: object NetGraphAlgebraDefs[0m
+[0m[[0m[31merror[0m] [0m[0mimport NetGraphAlgebraDefs.{NetGraph, NodeObject}[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:142:26: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m    var latestThiefNode: NodeObject = findStartingPositions(graph)[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Behavior.scala:60:47: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m  def findStartingPositions(graph: NetGraph): NodeObject = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Behavior.scala:60:36: not found: type NetGraph[0m
+[0m[[0m[31merror[0m] [0m[0m  def findStartingPositions(graph: NetGraph): NodeObject = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:138:16: not found: type NetGraph[0m
+[0m[[0m[31merror[0m] [0m[0m    val graph: NetGraph = GraphHolder.netOriginalGraph[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:143:30: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m    var latestPolicemanNode: NodeObject = findStartingPositions(graph)[0m
+[0m[[0m[31merror[0m] [0m[0m                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:7:8: not found: object NetGraphAlgebraDefs[0m
+[0m[[0m[31merror[0m] [0m[0mimport NetGraphAlgebraDefs.NetGraph.logger[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:46:45: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m  case class Move(userId: String, var node: NodeObject) extends Message[0m
+[0m[[0m[31merror[0m] [0m[0m                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:51:41: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m                    adjacentNodes: List[NodeObject], // List of adjacent nodes based on the latest node of the player[0m
+[0m[[0m[31merror[0m] [0m[0m                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:53:46: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m                    pathToValuableNode: List[NodeObject], // Path to the nearest node with valuable data[0m
+[0m[[0m[31merror[0m] [0m[0m                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:60:32: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m    def getAdjacentNodes: List[NodeObject] = adjacentNodes[0m
+[0m[[0m[31merror[0m] [0m[0m                               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:64:37: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m    def getPathToValuableNode: List[NodeObject] = pathToValuableNode[0m
+[0m[[0m[31merror[0m] [0m[0m                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:74:49: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m  implicit val nodeObjectFormat: RootJsonFormat[NodeObject] = jsonFormat([0m
+[0m[[0m[31merror[0m] [0m[0m                                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:75:5: not found: value NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m    NodeObject.apply,[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:79:62: could not find implicit value for evidence parameter of type spray.json.DefaultJsonProtocol.JF[Any] (Cannot find JsonWriter or JsonFormat type class for Any)[0m
+[0m[[0m[31merror[0m] [0m[0m  implicit val moveFormat: RootJsonFormat[Move] = jsonFormat2(Move.apply)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:83:63: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m  implicit object NodeObjectJsonFormat extends RootJsonFormat[NodeObject] {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:88:21: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m    def write(node: NodeObject): JsValue = JsObject([0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:102:31: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m    def read(value: JsValue): NodeObject = value.asJsObject.getFields([0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:117:9: not found: value NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m        NodeObject([0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:139:25: not found: type NetGraph[0m
+[0m[[0m[31merror[0m] [0m[0m    val perturbedGraph: NetGraph = GraphHolder.netPerturbedGraph[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GraphHolder.scala:30:26: not found: type NetGraph[0m
+[0m[[0m[31merror[0m] [0m[0m  val netPerturbedGraph: NetGraph = perturbedGraph.getOrElse {[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:152:35: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m    var latestThiefNodePerturbed: NodeObject = findStartingPositions(perturbedGraph)[0m
+[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:153:39: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m    var latestPolicemanNodePerturbed: NodeObject = findStartingPositions(perturbedGraph)[0m
+[0m[[0m[31merror[0m] [0m[0m                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:201:48: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m                               ownNode: Option[NodeObject],[0m
+[0m[[0m[31merror[0m] [0m[0m                                               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:202:53: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m                               opponentNode: Option[NodeObject],[0m
+[0m[[0m[31merror[0m] [0m[0m                                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:203:55: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m                               ownAdjacentNodes: List[NodeObject],[0m
+[0m[[0m[31merror[0m] [0m[0m                                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:204:60: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m                               opponentAdjacentNodes: List[NodeObject],[0m
+[0m[[0m[31merror[0m] [0m[0m                                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:216:40: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m            val updatedOwnNode: Option[NodeObject] = userId match {[0m
+[0m[[0m[31merror[0m] [0m[0m                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:227:45: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m            val updatedOpponentNode: Option[NodeObject] = userId match {[0m
+[0m[[0m[31merror[0m] [0m[0m                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:259:15: not found: value logger[0m
+[0m[[0m[31merror[0m] [0m[0m              logger.info(s"Error processing move: $move", e)[0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:270:52: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m              val adjacentNodesOption: Option[List[NodeObject]] =[0m
+[0m[[0m[31merror[0m] [0m[0m                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:273:56: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m              adjacentNodesOption.getOrElse(List.empty[NodeObject])[0m
+[0m[[0m[31merror[0m] [0m[0m                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:276:52: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m              val adjacentNodesOption: Option[List[NodeObject]] =[0m
+[0m[[0m[31merror[0m] [0m[0m                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:279:56: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m              adjacentNodesOption.getOrElse(List.empty[NodeObject])[0m
+[0m[[0m[31merror[0m] [0m[0m                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:281:34: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m            case _ => List.empty[NodeObject][0m
+[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:3:8: not found: object NetGraphAlgebraDefs[0m
+[0m[[0m[31merror[0m] [0m[0mimport NetGraphAlgebraDefs.{NetGraph, NodeObject}[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:20:78: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m  def dijkstraShortestPath(node: NodeObject, graph: NetGraph): (Double, List[NodeObject]) = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:20:34: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m  def dijkstraShortestPath(node: NodeObject, graph: NetGraph): (Double, List[NodeObject]) = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:20:53: not found: type NetGraph[0m
+[0m[[0m[31merror[0m] [0m[0m  def dijkstraShortestPath(node: NodeObject, graph: NetGraph): (Double, List[NodeObject]) = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:288:49: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m            case _ => (Int.MaxValue, List.empty[NodeObject])[0m
+[0m[[0m[31merror[0m] [0m[0m                                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:285:45: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m          val (distance: Double, path: List[NodeObject]) = playerId match {[0m
+[0m[[0m[31merror[0m] [0m[0m                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:109:42: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m  def calculateConfidenceScore(original: NodeObject, perturbed: NodeObject, perturbedGraph: NetGraph): Double = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:109:65: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m  def calculateConfidenceScore(original: NodeObject, perturbed: NodeObject, perturbedGraph: NetGraph): Double = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:109:93: not found: type NetGraph[0m
+[0m[[0m[31merror[0m] [0m[0m  def calculateConfidenceScore(original: NodeObject, perturbed: NodeObject, perturbedGraph: NetGraph): Double = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:305:49: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m      case class MakeMove(userId: String, node: NodeObject) extends Message[0m
+[0m[[0m[31merror[0m] [0m[0m                                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:318:49: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m      case class MakeMove(userId: String, node: NodeObject) extends Message[0m
+[0m[[0m[31merror[0m] [0m[0m                                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Yaml.scala:3:8: not found: object NetGraphAlgebraDefs[0m
+[0m[[0m[31merror[0m] [0m[0mimport NetGraphAlgebraDefs.NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Yaml.scala:18:32: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m  def parseNode(node: String): NodeObject = {[0m
+[0m[[0m[31merror[0m] [0m[0m                               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:554:15: not found: value logger[0m
+[0m[[0m[31merror[0m] [0m[0m              logger.info("Creating the YAML file...")[0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:559:15: not found: value logger[0m
+[0m[[0m[31merror[0m] [0m[0m              logger.info(s"Latest Thief Node: $latestThiefNode")[0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:560:15: not found: value logger[0m
+[0m[[0m[31merror[0m] [0m[0m              logger.info(s"Latest Policeman Node: $latestPolicemanNode")[0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:565:114: value toDS is not a member of List[Nothing][0m
+[0m[[0m[31merror[0m] [0m[0m                val adjacentNodes: Dataset[String] = moves.getAdjacentNodes.map(move => s"Adjacent Node: $move").toDS()[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:568:121: value toDS is not a member of List[Nothing][0m
+[0m[[0m[31merror[0m] [0m[0m                val movesDS: Dataset[String] = moves.getPathToValuableNode.map(move => s"Path to Valuable Node: $move").toDS()[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GameLogic.scala:578:19: not found: value logger[0m
+[0m[[0m[31merror[0m] [0m[0m                  logger.error("Error saving data to text file", e)[0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GraphHolder.scala:4:8: not found: object NetGraphAlgebraDefs[0m
+[0m[[0m[31merror[0m] [0m[0mimport NetGraphAlgebraDefs.NetGraph.logger[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GraphHolder.scala:5:8: not found: object Utilz[0m
+[0m[[0m[31merror[0m] [0m[0mimport Utilz.NGSConstants.obtainConfigModule[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GraphHolder.scala:15:30: not found: value obtainConfigModule[0m
+[0m[[0m[31merror[0m] [0m[0m  val globalConfig: Config = obtainConfigModule(config, CONFIGENTRYNAME)[0m
+[0m[[0m[31merror[0m] [0m[0m                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GraphHolder.scala:26:29: not found: type NetGraph[0m
+[0m[[0m[31merror[0m] [0m[0m  val originalGraph: Option[NetGraph] = NetGraph.load(originalGraphFileName, originalGraphPath)[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GraphHolder.scala:26:41: not found: value NetGraph[0m
+[0m[[0m[31merror[0m] [0m[0m  val originalGraph: Option[NetGraph] = NetGraph.load(originalGraphFileName, originalGraphPath)[0m
+[0m[[0m[31merror[0m] [0m[0m                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GraphHolder.scala:27:30: not found: type NetGraph[0m
+[0m[[0m[31merror[0m] [0m[0m  val perturbedGraph: Option[NetGraph] = NetGraph.load(perturbedGraphFileName, perturbedGraphPath)[0m
+[0m[[0m[31merror[0m] [0m[0m                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GraphHolder.scala:27:42: not found: value NetGraph[0m
+[0m[[0m[31merror[0m] [0m[0m  val perturbedGraph: Option[NetGraph] = NetGraph.load(perturbedGraphFileName, perturbedGraphPath)[0m
+[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GraphHolder.scala:31:5: not found: value logger[0m
+[0m[[0m[31merror[0m] [0m[0m    logger.error("Failed to load the perturbed graph.")[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/GraphHolder.scala:37:5: not found: value logger[0m
+[0m[[0m[31merror[0m] [0m[0m    logger.error("Failed to load the original graph.")[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:23:39: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m    val distances = mutable.Map.empty[NodeObject, Double][0m
+[0m[[0m[31merror[0m] [0m[0m                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:24:42: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m    val predecessors = mutable.Map.empty[NodeObject, Option[NodeObject]][0m
+[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:24:61: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m    val predecessors = mutable.Map.empty[NodeObject, Option[NodeObject]][0m
+[0m[[0m[31merror[0m] [0m[0m                                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:25:81: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m    val priorityQueue = mutable.PriorityQueue.empty(Ordering.by((nodeDistance: (NodeObject, Double)) => nodeDistance._2))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:26:37: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m    val visited = mutable.Set.empty[NodeObject][0m
+[0m[[0m[31merror[0m] [0m[0m                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:85:38: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m                             ): List[NodeObject] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:82:40: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m                               source: NodeObject,[0m
+[0m[[0m[31merror[0m] [0m[0m                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:83:58: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m                               predecessors: mutable.Map[NodeObject, Option[NodeObject]],[0m
+[0m[[0m[31merror[0m] [0m[0m                                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:83:77: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m                               predecessors: mutable.Map[NodeObject, Option[NodeObject]],[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:84:45: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m                               destination: NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:69:33: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m      (Int.MaxValue, List.empty[NodeObject])[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Statistics.scala:87:27: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m    var path = List.empty[NodeObject][0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Yaml.scala:35:7: not found: value NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m      NodeObject(id, children, props, currentDepth, propValueRange, maxDepth, maxBranchingFactor, maxProperties, storedValue, valuableData)[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Yaml.scala:68:23: not found: type NodeObject[0m
+[0m[[0m[31merror[0m] [0m[0m  def nodeToMap(node: NodeObject): java.util.Map[String, Any] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/wondamonsta/Desktop/UIC/2023/Fall2023/CLOUD_TO_SUBMIT/NetRandomWalker/src/main/scala/org/Yaml.scala:5:43: imported `Yaml` is permanently hidden by definition of object Yaml in package org[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport org.yaml.snakeyaml.{DumperOptions, Yaml}[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[31merror[0m] [0m[0m80 errors found[0m
