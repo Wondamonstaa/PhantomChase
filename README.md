@@ -109,7 +109,16 @@ _________________
 
 4. Behavior:
 
-The primary purpose of the Behavior object is to serve as a storage for functions responsible for handling ultimate conditions of the game, such as win/lose of both clients, restarting the game, displaying the welcome message to users, and initializing the starting positions for Thief and Policeman nodes. The ultimateConditions(0 function encapsulates the logic for checking the basic game conditions which will trigger the restartGame() function stored within the inner gameOverMessage() function to reinitialize the starting positions for each player, and start the game from the beginning. findStartingPositions() function is used to assign each user a starting position on both the original and perturbed graphs. Finally, the welcome() function is used to display the 'welcome' message to the users, as well as to check at the very beginning of the game the conditions which allow to restart the game right after the launch. Such scenarios include the situations, when the Thief was intially assigned a node which contains the valuableData attribute with the 'true' value. In such case the Thief wins by default.
+The primary purpose of the Behavior object is to serve as a storage for functions responsible for handling ultimate conditions of the game, such as win/lose of both clients, restarting the game, displaying the welcome message to users, and initializing the starting positions for Thief and Policeman nodes. The ultimateConditions(0 function encapsulates the logic for checking the basic game conditions which will trigger the restartGame() function stored within the inner gameOverMessage() function to reinitialize the starting positions for each player, and start the game from the beginning. findStartingPositions() function is used to assign each user a starting position on both the original and perturbed graphs. Finally, the welcome() function is used to display the 'welcome' message to the users, as well as to check at the very beginning of the game the conditions which allow to restart the game right after the launch. Such scenarios include the situations, when the Thief was intially assigned a node which contains the valuableData attribute with the 'true' value. In such case the Thief wins by default. In situations when both the Thief and Policeman were placed at the same node, and its valuableData is false, the Policeman wins automatically. Below you can see that both players have been placed at the same node where valuableData is false. Thus, the Policeman wins by default.
+
+# Sample output:
+
+_________________
+
+<img width="1323" alt="Screenshot 2023-11-23 at 10 17 51 PM" src="https://github.com/Wondamonstaa/PhantomChase/assets/113752537/d7e6c2f7-a7ff-46d9-b51d-f5f8a8c6a39e">
+
+
+_________________
 
 
 
