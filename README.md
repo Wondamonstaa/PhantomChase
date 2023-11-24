@@ -95,8 +95,16 @@ _________________
 
 3. Statistics:
 
+The Statistics object serves as a storage for the helper functions used to produce the required statistics about the game using GET requests provided by clients. dijkstraShortestPath() function is used to calculate the shortest path to the node where the valuableData attribute is 'true' by using the standard, but effective, Dijktra's algorithm implementation. Next, the reconstructPath() function allows the program to visualize the path taken by the dijkstraShortestPath() function, store it, and later write to the YAML file for user reference. The following functions are essential since on the large graphs without such a 'cheat code' it becomes incredibly difficult to get to the desired node with the valuableData by helplessly going forward in blind. Finally, the calculateConfidenceScore() is used to calculate the confidence score for the current node which tells the user that the node or the edges that lead to it were not perturbed.
+
+# Sample output:
+
+_________________
+
+<img width="376" alt="Screenshot 2023-11-23 at 9 39 42 PM" src="https://github.com/Wondamonstaa/PhantomChase/assets/113752537/b3663824-4f39-4f40-a4fb-f16600543560">
 
 
+_________________
 
 
 
