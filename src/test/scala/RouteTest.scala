@@ -18,6 +18,120 @@ import java.util
 import java.util.ArrayList
 import scala.io.Source
 import scala.util.Try
+import akka.actor.ActorSystem
+import akka.http.javadsl.server.Directives.route
+import akka.http.scaladsl.model.StatusCodes
+import akka.http.scaladsl.testkit.{RouteTestTimeout, ScalatestRouteTest}
+import org.scalatest.concurrent.ScalaFutures
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.wordspec.AnyWordSpec
+
+import scala.concurrent.duration._
+import akka.actor.ActorSystem
+import akka.event.Logging
+import akka.http.javadsl.server.Route
+import akka.http.scaladsl.model.StatusCodes
+import akka.http.scaladsl.testkit.{RouteTestTimeout, ScalatestRouteTest}
+import org.GameLogic
+import org.scalatest.concurrent.ScalaFutures
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.wordspec.AnyWordSpec
+
+import scala.concurrent.duration._
+import scala.sys.process.Process
+
+// Import your actual route here
+import org.GameLogic._
+import akka.http.scaladsl.server.Directives._
+
+class YourRouteSpec extends AnyWordSpec with Matchers with ScalatestRouteTest {
+  implicit def default(implicit system: ActorSystem): RouteTestTimeout = RouteTestTimeout(1.seconds)
+
+  // Start your application in a separate thread or asynchronously
+  val appThread = new Thread(new Runnable {
+    override def run(): Unit = {
+      GameLogic.main(Array.empty[String])
+    }
+  })
+  appThread.start()
+
+  // Wait for your application to start (adjust this as needed)
+  Thread.sleep(5000)
+
+  // Define your route for testing
+  //val testRoute: Route = route
+
+  "YourRoute" should {
+    "respond with OK for valid thief move" in {
+      // Send a request using curl
+      val curlCommand = "curl -X PUT 'http://localhost:8080/server?node=9,0,10,1,48,1,1,15,0.4655039893171621,false&user=thief'"
+      val response = Process(curlCommand).!!
+      println(s"Response: $response")
+
+      // Assert the response
+      response should include("Invalid move: Thief can only move to adjacent nodes.")
+    }
+
+    "respond with BadRequest for invalid thief move" in {
+      // Send a request using curl
+      val curlCommand = "curl -X PUT 'http://localhost:8080/server?node=9,0,10,1,48,1,1,15,0.4655039893171621,false&user=thief'"
+      val response = Process(curlCommand).!!
+      println(s"Response: $response")
+
+      // Assert the response
+      response should include("Invalid move")
+    }
+
+    // Add more test cases for different scenarios...
+
+    "respond with BadRequest if players are not initialized" in {
+      // Send a request using curl
+      val curlCommand = "curl -X PUT 'http://localhost:8080/server?node=9,0,10,1,48,1,1,15,0.4655039893171621,false&user=puppet'"
+      val response = Process(curlCommand).!!
+      println(s"Response: $response")
+
+      // Assert the response
+      response should include("Invalid user type!")
+    }
+
+    "respond with Moves for valid thief playerId" in {
+      // Send a request using curl and capture the response body
+      val curlCommand = "curl -s 'http://localhost:8080/server?playerId=thief'"
+      val responseBody = Process(curlCommand).!!
+
+      println(s"Response Body: $responseBody")
+
+      responseBody should include("children")
+    }
+
+
+    "respond with BadRequest for invalid playerId" in {
+      // Send a request using curl
+      val curlCommand = "curl -s 'http://localhost:8080/server?playerId=thief'"
+      val response = Process(curlCommand).!!
+      println(s"Response: $response")
+
+      response should include("storedValue")
+    }
+
+    "respond with InternalServerError if there is an exception" in {
+      // Send a request using curl
+      val curlCommand = "curl 'http://localhost:8080/server?playerId=policeman'"
+      val response = Process(curlCommand).!!
+      println(s"Response: $response")
+
+      // Assert the response
+      // You may need to adjust this based on your actual response structure
+      response should include("valuableData")
+    }
+  }
+
+  // Stop the application thread
+  appThread.interrupt()
+}
+
+
+
 
 
 class RandomWalkerTest extends AnyFunSuite with BeforeAndAfter with MockitoSugar with Matchers {
