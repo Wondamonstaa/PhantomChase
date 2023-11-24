@@ -120,6 +120,18 @@ _________________
 
 _________________
 
+5. Yaml:
+
+Yaml object contains functions for handling YAML parsing and conversion. The parseNode() function is used to parse the String from the 'curl' command, and transform it into a NodeObject which can be used to detect the adjacent nodes using the corresponding functions for this purpose. Next, the convertMovesToYaml() initializes the HashMap which will store the obtained statistics in the form of key/value pair, and dump the contents into the Yaml object. The following function uses nodeToMap() method to place the headers and corresponding to it data into the Yaml file. Additionally, the moveToMap() function is used to store the sequence of moves taken by each player inside the newly generated Yaml file. Finally, the writeYamlToFile() method is used to write the full information into the Yaml file and close it after the procedure is done. Additionally, in tandem with the Yaml functions within the route of the GameLogic object, Spark functionality is used to produce the statistics about the confidence, adjacent nodes, and the moves taken by each player so far. 
+
+# Sample output:
+
+_________________
+
+<img width="396" alt="Screenshot 2023-11-23 at 10 26 59 PM" src="https://github.com/Wondamonstaa/PhantomChase/assets/113752537/ed6df442-1882-4940-baf7-8d9c8f2e5fd6">
+<img width="677" alt="Screenshot 2023-11-23 at 10 32 01 PM" src="https://github.com/Wondamonstaa/PhantomChase/assets/113752537/a33cebb8-272f-41c6-a63c-815f713c8104">
+
+_________________
 
 
 1. Main: 
