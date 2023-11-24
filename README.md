@@ -67,7 +67,7 @@ This section will provide a detailed description of each of the classes that I i
 
 1. GraphHolder:
 
-GraphHolder, located under src/main/scala/Game, this time serves as the entry point of the program. The following object obtains the configurations, specified in the application.conf file, using the ConfigFactory class, and loads the essential resources for the game to play. The entry point of the object is the 'main' method, which was left empty to simplify the program flow and make the objects accessible by the GameLogic and other objects easily throughout the project. After getting the configurations using the globalConfig value of Config type, using the load() method I load the original and perturbed graphs located under the specified paths, which later will be accessed by the GameLogic object to successfully run the server.
+GraphHolder, located under src/main/scala/Game, this time serves as the entry point of the program. The following object obtains the configurations, specified in the application.conf file, using the ConfigFactory class, and loads the essential resources for the game to play. The entry point of the object is the 'main' method, which was left empty to simplify the program flow and make the objects accessible by the GameLogic and other objects easily throughout the project. After getting the configurations using the globalConfig value of Config type, using the load() method I load the original and perturbed graphs located under the specified paths, which later will be accessed by the GameLogic object to successfully run the server. Below you can see an example of a generated graph containing 8000 nodes.
 
 # Sample output:
 
