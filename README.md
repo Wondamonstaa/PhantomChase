@@ -87,6 +87,7 @@ Located under the Game folder, the following object serves its primary role as t
 _________________
 
 <img width="1320" alt="Screenshot 2023-11-23 at 9 43 50 PM" src="https://github.com/Wondamonstaa/PhantomChase/assets/113752537/fbe659ea-892c-4cf2-bd3e-e318a31a0049">
+<img width="1387" alt="Screenshot 2023-11-23 at 9 44 34 PM" src="https://github.com/Wondamonstaa/PhantomChase/assets/113752537/59699784-ea59-49d2-ad09-95ac9d103533">
 <img width="1391" alt="Screenshot 2023-11-23 at 9 46 58 PM" src="https://github.com/Wondamonstaa/PhantomChase/assets/113752537/5f7d8d31-0848-4f50-b5ce-5ce60f6664eb">
 
 _________________
