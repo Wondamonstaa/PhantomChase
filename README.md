@@ -6,7 +6,7 @@
 Repo for the PhantomChase Project 3 for CS 441 Fall 2023
 
 ---
-AWS EMR Deployment YouTube link: EDIT
+AWS EMR Deployment YouTube link: https://youtu.be/l9MlCLqnaSI
 ---
 
 ## How to Run the Project:
