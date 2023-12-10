@@ -1,0 +1,6 @@
+Student: Kiryl Baravikou
+
+Excellent job! You have created an interesting solution, and your code is clean.
+As always, your video is great and your documentation is well detailed.
+
+Final Grade: 20%
